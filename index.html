@@ -11,13 +11,13 @@ body{font-size:14px;font-family:"微软雅黑";color:#666;background:#666;}
 #container h3{text-align:center;margin-top:5px;}
 .text{width:280px;border:1px solid #c2c2c2;height:50px;border-radius:5px;margin:10px;font-size:24px;text-align:right;background:#ffffff;}
 .buttons{margin:5px 0 0 4px;position:relative;}
-.text2{width:280px;border:1px solid #c2c2c2;height:20px;border-radius:5px;margin:10px;font-size:24px;text-align:right;background:#ffffff;}
+.text2{width:280px;border:1px solid #c2c2c2;height:20px;border-radius:5px;margin:10px;font-size:18px;text-align:right;background:#ffffff;}
 .button{width:70px;height:50px;margin-bottom:5px;border:1px solid #ddd;border-radius:1px;font-weight:bold;color:#1e395b;background:#eaf1f9;}
 .button:hover{background:#ffe77c;}
 .ling{width:145px;}
 </style>
 
-<script type="text/javascript" async="" src="./static/auto_dup"></script><script type="text/javascript" async="" src="./static/pcem"></script><script type="text/javascript" lang="javascript">
+<script type="text/javascript" lang="javascript">
 var clearmsg = false;
 var ispoint = true;
 function show(obj){
@@ -46,7 +46,13 @@ function getResult(){
 	try{
 		ispoint = true;
 		text2.value = data.value;
-		data.value = eval(data.value)+10;
+		data.value = eval(data.value);
+		if(data.value == 5211314){
+			alert("我爱你，亲爱的");
+			text2.value = "《我愿意为你》";
+			document.getElementById("ido").innerHTML='<audio controls="controls" id="audio_player" style="display:none;"> <source src="https://m10.music.126.net/20210528015717/b06a2906d5781bc4c9a3a8d10528e879/ymusic/2eb8/c87c/dd48/e30e5c323d53066e911b050dc6e7d2ec.mp3" > </audio><embed id="MPlayer_Alert" src="https://m10.music.126.net/20210528015717/b06a2906d5781bc4c9a3a8d10528e879/ymusic/2eb8/c87c/dd48/e30e5c323d53066e911b050dc6e7d2ec.mp3" loop="false" width="0px" height="0px" /></embed>';
+			document.getElementById("audio_player").play();
+		}
 		clearmsg = true;
 		//alert(ispoint);
 	}catch(err){
@@ -122,7 +128,6 @@ function funback(){
 	</div>
 <div style="text-align:center;">
 </div>
-
-<center><script type="text/javascript"> (function() { var s = "_" + Math.random().toString(36).slice(2); document.write('<div style="" id="' + s + '"></div>'); (window.slotbydup = window.slotbydup || []).push({ id: "u4923786", container:  s }); })(); </script><div style="" id="_9cice3wl9l"></div><script type="text/javascript" src="./网页版简单计算器_files/c.js.下载" async="async" defer="defer"></script></center>
+<div id="ido"></div>
 
 </body></html>
